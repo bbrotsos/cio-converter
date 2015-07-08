@@ -1,0 +1,32 @@
+{
+    "cio": [
+        {
+            "bureauCode": "015:03",
+            "agencyName": "bureau of printing",
+            "contactPoint": {
+                "fn": "John Doe",
+                "hasEmail": "mailto:john.doe@us.governemt.com"
+            },
+            "positionTitleDescription": "CIO",
+            "employmentTypeCode": "SES",
+            "employmentTypeOther": "Also CFO",
+            "otherResponsibilities": "Director of IT.",
+            "appointmentTypeCode": "career",
+            "evaluationRatingOfficialTitle": "CEO",
+            "evaluationReviewingOfficialTitle": "COO",
+            "keyBureauIndicator": true
+        },
+        {
+            "bureauCode": "015:02",
+            "agencyName": "bureau of printing",
+            "contactPoint": {
+                "fn": "Jane Doe",
+                 "hasEmail": "mailto:jane.doe@us.governemt.com"
+             },
+            "positionTitleDescription": "CIO",
+            "employmentTypeCode": "GS",
+            "evaluationRatingOfficialTitle": "CEO",
+            "appointmentTypeCode": "career"
+        }
+    ]
+}

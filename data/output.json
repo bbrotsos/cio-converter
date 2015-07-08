@@ -1,0 +1,32 @@
+{
+    "cio": [
+        {
+            "appointmentTypeCode": "career",
+            "bureauCode": "015:10",
+            "contactPoint": {
+                "fn": "John Doe",
+                "hasEmail": "mailto:john.doe@usa.gov"
+            },
+            "employmentTypeCode": "GS",
+            "employmentTypeOther": "works hard",
+            "evaluationRatingOfficialTitle": "bureau_head",
+            "keyBureauIndicator": true,
+            "otherResponsibilities": "full-time CIO",
+            "positionTitleDescription": "CIO"
+        },
+        {
+            "appointmentTypeCode": "career",
+            "bureauCode": "015:16",
+            "contactPoint": {
+                "fn": "Jane Doe",
+                "hasEmail": "mailto:jane.doe@usa.gov"
+            },
+            "employmentTypeCode": "GS",
+            "employmentTypeOther": "works harder",
+            "evaluationRatingOfficialTitle": "bureau_head",
+            "keyBureauIndicator": false,
+            "otherResponsibilities": "full-time CIO",
+            "positionTitleDescription": "CIO"
+        }
+    ]
+}
