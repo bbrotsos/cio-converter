@@ -18,9 +18,9 @@ from jsonschema import validate
 
 class ConvertCioData:
     
-    DATA_DIRECTORY = ""
     SCHEMA_DIRECTORY = "schema/"
     
+    rootName = "leaders"
     cioFieldNames = ["firstName", "lastName", "bureauCode", "positionTitleDescription", "employmentType", "employmentTypeOther", "typeOfAppointment", "otherResponsibilities", "evaluationRatingOfficialTitle", "evaluationReviewingOfficialTitle", "keyBureauCIO"]
     
     def __init__(self, cioJsonFileName, cioCsvFileName, cioOutputFileName):
@@ -55,7 +55,7 @@ class ConvertCioData:
                 
                 cio_list.append(cio)
                 
-        self._json["leaders"] = cio_list
+        self._json[rootName] = cio_list
         self.createJsonFile()
                 
     def createJsonFile(self):
@@ -70,7 +70,7 @@ class ConvertCioData:
             data = json.load(data_file)
             self._validateJson(data)
 
-        for cio_list in data["leaders"]:
+        for cio_list in data[rootName]:
             self.__createCsvRow(cio_list)
         
         self.createCsvFile()
