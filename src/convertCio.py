@@ -70,7 +70,7 @@ class ConvertCioData:
             data = json.load(data_file)
             self._validateJson(data)
 
-        for cio_list in data["cio"]:
+        for cio_list in data["leaders"]:
             self.__createCsvRow(cio_list)
         
         self.createCsvFile()
@@ -82,12 +82,6 @@ class ConvertCioData:
             	cioRow[cioField] = cio[cioField]
             else:
                 cioRow[cioField] = ""
-        
-        for contactField in self.contactPointFieldNames:
-            if contactField in cio["contactPoint"]:
-                cioRow[contactField] = cio["contactPoint"][contactField]
-            else:
-                cioRow[contactField] = ""
         
         self._csv.append(cioRow)
         

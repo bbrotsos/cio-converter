@@ -1,3 +1,3 @@
-otherResponsibilities,keyBureauIndicator,fn,appointmentTypeCode,positionTitleDescription,evaluationReviewingOfficialTitle,evaluationRatingOfficialTitle,bureauCode,employmentTypeCode,hasEmail,employmentTypeOther
-Director of IT.,True,John Doe,career,CIO,COO,CEO,015:03,SES,mailto:john.doe@us.governemt.com,Also CFO
-,,Jane Doe,career,CIO,,CEO,015:02,GS,mailto:jane.doe@us.governemt.com,
+otherResponsibilities,firstName,lastName,evaluationReviewingOfficialTitle,positionTitleDescription,employmentTypeOther,evaluationRatingOfficialTitle,bureauCode,employmentType,typeOfAppointment,keyBureauCIO
+full-time CIO,John,Doe,,CIO,works hard,bureau_head,10,GS,career,Yes
+full-time CIO,Jane,Doe,,CIO,works harder,bureau_head,16,GS,career,No
