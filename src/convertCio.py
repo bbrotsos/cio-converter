@@ -43,34 +43,33 @@ class ConvertCioData:
         '''
         converts csv to json
         '''
-        with open(self.DATA_DIRECTORY + self._cioCsvFileName) as csvfile:
+        with open(self._cioCsvFileName) as csvfile:
             cio_reader = csv.DictReader(csvfile)
             cio_list = []
             for row in cio_reader:
                 cio = {}
                 for cioField in self.cioFieldNames:
-                
-                    if cioField in row:
+                    if cioField in row and row[cioField]:
                         cio[cioField] = row[cioField]
                 
                 cio_list.append(cio)
                 
-        self._json[rootName] = cio_list
+        self._json[self.rootName] = cio_list
         self.createJsonFile()
                 
     def createJsonFile(self):
-        with open(self.DATA_DIRECTORY + self._outputFileName, "w") as cioJson:
+        with open(self._outputFileName, "w") as cioJson:
             self._validateJson(self._json)
             json.dump(self._json, cioJson, indent=4, sort_keys=True)
             print ("Successfully created json:" + self._outputFileName + " from csv file:" + self._cioCsvFileName)
 
         
     def convertToCioCsv(self):
-        with open(self.DATA_DIRECTORY + self._cioJsonFileName) as data_file:
+        with open(self._cioJsonFileName) as data_file:
             data = json.load(data_file)
             self._validateJson(data)
 
-        for cio_list in data[rootName]:
+        for cio_list in data[self.rootName]:
             self.__createCsvRow(cio_list)
         
         self.createCsvFile()
