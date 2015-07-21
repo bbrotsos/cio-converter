@@ -21,8 +21,7 @@ class ConvertCioData:
     DATA_DIRECTORY = ""
     SCHEMA_DIRECTORY = "schema/"
     
-    cioFieldNames = ["bureauCode", "positionTitleDescription", "employmentTypeCode", "employmentTypeOther", "appointmentTypeCode", "otherResponsibilities", "evaluationRatingOfficialTitle", "evaluationReviewingOfficialTitle", "keyBureauIndicator"]
-    contactPointFieldNames = ["fn", "hasEmail"]
+    cioFieldNames = ["firstName", "lastName", "bureauCode", "positionTitleDescription", "employmentType", "employmentTypeOther", "typeOfAppointment", "otherResponsibilities", "evaluationRatingOfficialTitle", "evaluationReviewingOfficialTitle", "keyBureauCIO"]
     
     def __init__(self, cioJsonFileName, cioCsvFileName, cioOutputFileName):
         self._cioJsonFileName = cioJsonFileName
@@ -32,7 +31,7 @@ class ConvertCioData:
         self._json = {}
         
     def _validateJson(self, cioJson):
-        with open(self.SCHEMA_DIRECTORY + "cio_list.json") as data_file:
+        with open(self.SCHEMA_DIRECTORY + "bureauITLeadershipSchema.json") as data_file:
             cioJsonSchema = json.load(data_file)
             try:
                 #TODO: lazy validation
@@ -52,22 +51,11 @@ class ConvertCioData:
                 for cioField in self.cioFieldNames:
                 
                     if cioField in row:
-                        #TODO: Optimize booleans from csv?
-                        if (cioField == "keyBureauIndicator"):
-                            if (row[cioField] == "true"):
-                                cio[cioField] = True
-                            else:
-                                cio[cioField] = False
-                        else:
-                            cio[cioField] = row[cioField]
+                        cio[cioField] = row[cioField]
                 
-                contactPoint = {}
-                for contactPointField in self.contactPointFieldNames:
-                    contactPoint[contactPointField] = row[contactPointField]
-                cio["contactPoint"] = contactPoint
                 cio_list.append(cio)
                 
-        self._json["cio"] = cio_list
+        self._json["leaders"] = cio_list
         self.createJsonFile()
                 
     def createJsonFile(self):
