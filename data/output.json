@@ -1,32 +1,28 @@
 {
-    "cio": [
+    "leaders": [
         {
-            "appointmentTypeCode": "career",
-            "bureauCode": "015:10",
-            "contactPoint": {
-                "fn": "John Doe",
-                "hasEmail": "mailto:john.doe@usa.gov"
-            },
-            "employmentTypeCode": "GS",
+            "bureauCode": "10",
+            "employmentType": "GS",
             "employmentTypeOther": "works hard",
             "evaluationRatingOfficialTitle": "bureau_head",
-            "keyBureauIndicator": true,
+            "firstName": "John",
+            "keyBureauCIO": "Yes",
+            "lastName": "Doe",
             "otherResponsibilities": "full-time CIO",
-            "positionTitleDescription": "CIO"
+            "positionTitleDescription": "CIO",
+            "typeOfAppointment": "career"
         },
         {
-            "appointmentTypeCode": "career",
-            "bureauCode": "015:16",
-            "contactPoint": {
-                "fn": "Jane Doe",
-                "hasEmail": "mailto:jane.doe@usa.gov"
-            },
-            "employmentTypeCode": "GS",
+            "bureauCode": "16",
+            "employmentType": "GS",
             "employmentTypeOther": "works harder",
             "evaluationRatingOfficialTitle": "bureau_head",
-            "keyBureauIndicator": false,
+            "firstName": "Jane",
+            "keyBureauCIO": "No",
+            "lastName": "Doe",
             "otherResponsibilities": "full-time CIO",
-            "positionTitleDescription": "CIO"
+            "positionTitleDescription": "CIO",
+            "typeOfAppointment": "career"
         }
     ]
 }
